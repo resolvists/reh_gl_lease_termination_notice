@@ -1,0 +1,48 @@
+%%% Author: mterenui (F.M.T. C)
+%%% Docs: https://github.com/xxx
+%%% License: GNU General Public License v3.0
+%%% This document is provided as a general template for informational purposes only and does not constitute legal advice. Permission is granted to copy, modify, and use this template for personal or commercial purposes, provided that this copyright and license notice is retained in all copies or substantial portions of the document. The author makes no representations or warranties regarding the legal validity or enforceability of this template in any jurisdiction. Users are strongly encouraged to consult a qualified legal professional before using this document.
+
+\usepackage[utf8]{inputenc} % UTF-8 encoding for international characters
+\usepackage[T1]{fontenc}    % Better font encoding
+\usepackage{microtype}      % Improved typography and spacing
+\usepackage{xcolor}         % Color support
+\usepackage{ifthen}         % Conditional statements
+
+\usepackage[
+	a4paper,    % Paper size
+	top=1in,    % Top margin
+	bottom=1in, % Bottom margin
+	left=1in,   % Left margin
+	right=1in,  % Right margin
+	%showframe  % Uncomment to show frames around the margins for debugging
+]{geometry}
+
+\setlength{\parindent}{0pt}     % No paragraph indentation 
+\setlength{\parskip}{0.8em}     % Vertical space between paragraphs
+\linespread{1.1}                % Slightly increased line spacing
+
+\usepackage{wallpaper}      % Background images
+\usepackage{graphicx}       % Required for including images
+\usepackage{fancyhdr}       % Required for customizing headers and footers
+\usepackage{array}          % Advanced table column types
+\usepackage{booktabs}       % Professional table formatting
+\usepackage{lastpage}       % Reference to last page number
+
+\fancypagestyle{firstpage}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{0pt} % No header rule on first page
+	\renewcommand{\footrulewidth}{0pt} % Subtle footer rule
+	%\fancyfoot[C]{\small Page \thepage\ of \pageref{LastPage}} % Centered page numbering
+}
+
+\fancypagestyle{subsequentpages}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{0pt} % Header rule thickness
+	\renewcommand{\footrulewidth}{0pt} % Footer rule thickness
+	\fancyhead[L]{\small \senderName} % Sender name in header
+	\fancyhead[R]{\small \letterDate} % Date in header
+}
+
+\AtBeginDocument{\thispagestyle{firstpage}} % Use first page style on first page
+\pagestyle{subsequentpages} % Use subsequent pages style on other pages
